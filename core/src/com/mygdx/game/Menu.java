@@ -10,10 +10,10 @@ public class Menu implements Screen {
 
     public Menu(Main game) {
         this.game = game;
-        float height = (float)Gdx.graphics.getHeight();
-        float width = (float)Gdx.graphics.getWidth();
-        this.camera = new OrthographicCamera(width, height);
-        this.camera.setToOrtho(false);
+        float height = Gdx.graphics.getHeight();
+        float width = Gdx.graphics.getWidth();
+        camera = new OrthographicCamera(width, height);
+        camera.setToOrtho(false);
     }
 
     public void show() {
@@ -22,11 +22,11 @@ public class Menu implements Screen {
     public void render(float delta) {
         Gdx.gl.glClearColor(0.0F, 1.0F, 0.0F, 0.0F);
         Gdx.gl.glClear(16384);
-        this.camera.update();
-        this.game.batch.setProjectionMatrix(this.camera.combined);
+        camera.update();
+        game.batch.setProjectionMatrix(camera.combined);
         if (Gdx.input.isTouched()) {
-            this.game.setScreen(new MyGame());
-            this.dispose();
+            game.setScreen(new MyGame());
+            dispose();
         }
 
     }
@@ -41,7 +41,7 @@ public class Menu implements Screen {
     }
 
     public void hide() {
-        this.dispose();
+        dispose();
     }
 
     public void dispose() {

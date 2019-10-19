@@ -12,9 +12,9 @@ public class Main extends Game {
     }
 
     public void create() {
-        this.batch = new SpriteBatch();
-        this.font = new BitmapFont();
-        this.setScreen(new Menu(this));
+        batch = new SpriteBatch();
+        font = new BitmapFont();
+        setScreen(new Menu(this));
     }
 
     public void render() {
@@ -22,7 +22,7 @@ public class Main extends Game {
     }
 
     public void dispose() {
-        this.batch.dispose();
-        this.font.dispose();
+        batch.dispose();
+        font.dispose();
     }
 }
